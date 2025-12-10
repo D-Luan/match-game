@@ -44,19 +44,33 @@ public partial class MainWindow : Window
         }
     }
 
-    private void SetUpGame()
+    private static List<string> GetAnimalEmojiList()
     {
+        List<string> animalEmojiForTheGame = new List<string>();
+
         List<string> animalEmoji = new List<string>()
         {
-            "🐊", "🐊",
-            "🐳", "🐳",
-            "🦂", "🦂",
-            "🦍", "🦍",
-            "🦧", "🦧",
-            "🐂", "🐂",
-            "🦣", "🦣",
-            "🦤", "🦤"
+            "🐙", "🐡", "🐘", "🐳", "🐪", "🦕", "🦘", "🦔", "🦇", "🦉", "🦒", "🐅", "🦏", "🦓", "🦧", "🐩"
         };
+
+        Random random = new Random();
+
+        for (int i = 0; i < 8; i++)
+        {
+            int index = random.Next(animalEmoji.Count);
+
+            animalEmojiForTheGame.Add(animalEmoji[index]);
+            animalEmojiForTheGame.Add(animalEmoji[index]);
+
+            animalEmoji.RemoveAt(index);
+        }
+
+        return animalEmojiForTheGame;
+    }
+
+    private void SetUpGame()
+    {
+        List<string> animalEmoji = GetAnimalEmojiList();
 
         Random random = new Random();
 
@@ -75,7 +89,7 @@ public partial class MainWindow : Window
         tenthsOfSecondsElapsed = 0;
         matchesFound = 0;
     }
-
+    
     TextBlock lastTextBlockClicked;
     bool findingMatch = false;
 
