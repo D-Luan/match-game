@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -122,5 +123,25 @@ public partial class MainWindow : Window
         {
             SetUpGame();
         }
+    }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        mainInterface.Visibility = Visibility.Collapsed;
+        mainGrid.Visibility = Visibility.Visible;
+        menuGame.Visibility = Visibility.Visible;
+        SetUpGame();
+    }
+
+    private void BackToMenu_Click(object sender, RoutedEventArgs e)
+    {
+        mainGrid.Visibility = Visibility.Collapsed;
+        menuGame.Visibility = Visibility.Collapsed;
+        mainInterface.Visibility = Visibility.Visible;
+    }
+
+    private void RestartGame_Click(object sender, RoutedEventArgs e)
+    {
+        SetUpGame();
     }
 }

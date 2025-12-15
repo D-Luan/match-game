@@ -7,7 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
     <Grid>
-        <Grid x:Name="mainGrid">
+        <DockPanel x:Name="menuGame" LastChildFill="false" Visibility="Collapsed">
+            <Menu DockPanel.Dock="Bottom">
+                <MenuItem Header="Back to Menu" Click="BackToMenu_Click"/>
+                <MenuItem Header="Restart Game" Click="RestartGame_Click"/>
+            </Menu>
+        </DockPanel>
+
+        <Grid x:Name="mainInterface" Visibility="Visible">
+            <TextBlock Text="Match Game" FontSize="35" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, -150, 0, 0"/>
+            <Button Content="PLAY" FontSize="35" Padding="20, 0" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click" />
+        </Grid>
+        
+        <Grid x:Name="mainGrid" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
