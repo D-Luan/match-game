@@ -54,7 +54,7 @@
             <TextBlock Text="?" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="2" MouseDown="TextBlock_MouseDown"/>
             <TextBlock Text="?" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="3" MouseDown="TextBlock_MouseDown"/>
 
-            <TextBlock x:Name="timeTextBlock" Text="?" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="4" MouseDown="TimeTextBlock_MouseDown"/>
+            <TextBlock x:Name="timeTextBlock" Text="?" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="4" MouseDown="TimeTextBlock_MouseDown"/>
         </Grid>
     </Grid>
 </Window>
